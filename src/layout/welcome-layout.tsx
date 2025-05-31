@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const WelcomeScreen = () => {
+const WelcomeLayout = () => {
   const navigate = useNavigate();
 
   return (
@@ -26,4 +26,4 @@ const WelcomeScreen = () => {
   );
 };
 
-export default WelcomeScreen;
+export default WelcomeLayout;

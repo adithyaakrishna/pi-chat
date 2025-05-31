@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Sidebar from "../navigation/sidebar";
-import OptionsPanel from "../panels/options-panel";
-import ChatPanel from "../panels/chat-panel";
-import AccountPanel from "../panels/account-panel";
+import Sidebar from "../components/navigation/sidebar";
+import OptionsPanel from "../components/panels/options-panel";
+import ChatPanel from "../components/panels/chat-panel";
+import AccountPanel from "../components/panels/account-panel";
 import { VolumeX, Menu, Volume2, Globe2, Mic2 } from "lucide-react";
 import { Language, SUPPORTED_LANGUAGES, SUPPORTED_VOICES, Voice } from "@/lib/types";
 

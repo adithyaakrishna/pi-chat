@@ -1,8 +1,7 @@
-
 import MainLayout from "@/layout/main-layout";
 
-const Index = () => {
+const AppPage = () => {
   return <MainLayout />;
 };
 
-export default Index;
+export default AppPage;
