@@ -21,8 +21,8 @@ const SidebarButton = React.memo(({
     <button 
       onClick={onClick}
       className={cn(
-        "p-3 rounded-md transition-all duration-300 hover:bg-green-50 flex flex-col items-center",
-        isActive ? "bg-green-50" : "",
+        "p-2 rounded-md transition-all duration-300 hover:bg-[#ede1d1]/60 flex flex-col items-center",
+        isActive ? "bg-[#ede1d1]" : "",
         className
       )}
       aria-label={label}

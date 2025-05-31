@@ -13,7 +13,7 @@ import React from "react";
 
 const AccountPanel = React.memo(() => {
   return (
-    <div className="p-3 sm:p-4 md:p-6 h-full">
+    <div className="p-3 sm:p-4 md:p-6 h-full bg-[#f7efe3]">
       <h1 className="text-2xl sm:text-3xl font-serif text-green-900 mb-6 sm:mb-8">Adi</h1>
       
       <div className="space-y-4 sm:space-y-6">

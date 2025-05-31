@@ -66,8 +66,8 @@ const MainLayout = () => {
       <div 
         className={`
           hidden md:block md:relative
-          bg-[#f8f3e9] w-full md:max-w-md flex-shrink-0 
-          overflow-y-auto h-full z-20
+          w-full md:max-w-md flex-shrink-0 
+          overflow-y-auto h-full z-20 bg-[#f7efe3]
         `}
       >
         {renderMiddlePanel()}

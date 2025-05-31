@@ -17,7 +17,7 @@ const Sidebar = React.memo(({ activeIcon, setActiveIcon }: SidebarProps) => {
   }, [setActiveIcon]);
   
   return (
-    <div className="h-full flex flex-col items-center py-6 bg-[#F2EDE5] text-gray-600">
+    <div className="h-full flex flex-col items-center py-6 bg-[#faf3ea] text-gray-600">
       <div className="flex flex-col items-center space-y-8">
         <SidebarButton
           icon={Sparkle}
