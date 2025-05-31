@@ -27,26 +27,26 @@ const FeatureCard = React.memo(({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay }}
       className={cn(
-        "p-5 rounded-xl shadow-sm",
+        "p-4 sm:p-5 md:p-6 rounded-xl",
         className
       )}
       style={{ backgroundColor }}
     >
-      <div className="flex items-start">
+      <div className="flex items-start gap-3 sm:gap-4">
         {emoji && (
-          <div className="mr-4">
-            <div className="bg-purple-100 h-12 w-12 rounded-full flex items-center justify-center">
-              <span className="text-2xl">{emoji}</span>
+          <div className="flex-shrink-0">
+            <div className="bg-purple-100 h-10 w-10 sm:h-12 sm:w-12 rounded-full flex items-center justify-center">
+              <span className="text-xl sm:text-2xl">{emoji}</span>
             </div>
           </div>
         )}
-        <div>
-          <h2 className="text-xl font-serif text-green-900 mb-1">
+        <div className="flex-1 min-w-0">
+          <h2 className="text-lg sm:text-xl font-serif text-green-900 mb-1 line-clamp-2">
             {title}
           </h2>
           {actionText && (
             <button 
-              className="text-green-600 font-medium hover:text-green-800 transition-colors" 
+              className="text-sm sm:text-base text-green-600 font-medium hover:text-green-800 transition-colors" 
               onClick={onAction}
             >
               {actionText}

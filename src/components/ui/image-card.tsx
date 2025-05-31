@@ -16,7 +16,7 @@ const ImageCard = React.memo(({
   imageUrl,
   title,
   className,
-  height = "h-36",
+  height = "h-32 sm:h-36 md:h-40",
   delay = 0,
   onClick,
   alt = "Card image",
@@ -27,7 +27,7 @@ const ImageCard = React.memo(({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay }}
       className={cn(
-        "bg-cover bg-center rounded-xl overflow-hidden relative cursor-pointer",
+        "bg-cover bg-center rounded-xl overflow-hidden relative cursor-pointer group",
         height,
         className
       )}
@@ -39,11 +39,11 @@ const ImageCard = React.memo(({
         width="400"
         height="300"
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-      <div className="absolute bottom-4 left-4 text-white">
-        <h3 className="text-lg font-medium leading-tight">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20"></div>
+      <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white">
+        <h3 className="text-base sm:text-lg md:text-xl font-medium leading-tight line-clamp-2">
           {title}
         </h3>
       </div>
