@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { openai } from "@/lib/openai";
 import { SarvamAIClient } from "sarvamai";
+import { Language, Voice } from "@/lib/types";
+import { TextToSpeechLanguage } from "sarvamai/api";
 
 interface Message {
   role: 'user' | 'assistant';
@@ -11,13 +13,22 @@ interface Message {
 interface ChatPanelProps {
   isMuted: boolean;
   selectedMessage: string | null;
+  selectedLanguage: Language;
+  selectedVoice: Voice;
 }
 
-const ChatPanel = ({ isMuted, selectedMessage }: ChatPanelProps) => {
+const ChatPanel = ({ isMuted, selectedMessage, selectedLanguage, selectedVoice }: ChatPanelProps) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [audioPlayer, setAudioPlayer] = useState<HTMLAudioElement | null>(null);
+
+  const getSystemPrompt = () => {
+    if (selectedLanguage.code === TextToSpeechLanguage.EnIn) {
+      return "You are a helpful assistant.";
+    }
+    return `You are a helpful assistant. Always respond in ${selectedLanguage.name}. Do not translate or use any other language.`;
+  };
 
   useEffect(() => {
     setAudioPlayer(new Audio());
@@ -47,7 +58,11 @@ const ChatPanel = ({ isMuted, selectedMessage }: ChatPanelProps) => {
         try {
           const response = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
-            messages: [...messages, userMessage],
+            messages: [
+              { role: 'system', content: getSystemPrompt() },
+              ...messages,
+              userMessage
+            ],
           });
 
           const assistantMessage = {
@@ -69,7 +84,6 @@ const ChatPanel = ({ isMuted, selectedMessage }: ChatPanelProps) => {
   }, [selectedMessage]);
 
   const speakMessage = async (text: string) => {
-    // Stop if already muted before starting
     if (isMuted || !text) return;
 
     try {
@@ -78,10 +92,10 @@ const ChatPanel = ({ isMuted, selectedMessage }: ChatPanelProps) => {
       });
 
       const response = await client.textToSpeech.convert({
-        target_language_code: "en-IN",
+        target_language_code: selectedLanguage.code,
         text: text.slice(0, 500),
         model: "bulbul:v2",
-        speaker: "anushka",
+        speaker: selectedVoice.id,
       });
 
       if (!response.audios || !response.audios[0]) {
@@ -139,7 +153,11 @@ const ChatPanel = ({ isMuted, selectedMessage }: ChatPanelProps) => {
     try {
       const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
-        messages: [...messages, userMessage],
+        messages: [
+          { role: 'system', content: getSystemPrompt() },
+          ...messages,
+          userMessage
+        ],
       });
 
       const assistantMessage = {
