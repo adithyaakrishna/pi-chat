@@ -25,7 +25,7 @@ A modern, responsive AI chat interface built with Vite, React, TypeScript, and T
 - 🎭 Job interview simulation
 - 🧩 Riddles and puzzles
 - 🌌 Educational content
-- 📜 Conversation history
+- 📜 Conversation history (WIP)
 
 ### Technical Features
 - ⚡ Built with Vite for fast development
