@@ -34,9 +34,10 @@ const OptionsPanel = React.memo(({ onOptionSelect }: OptionsPanelProps) => {
              className="bg-[#F2EDE5] rounded-[20px] md:rounded-[24px] shadow-[inset_0_1px_1px_rgba(0,0,0,0.05)] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
           <ImageCard
             imageUrl={JOB_INTERVIEW_IMAGE}
-            title="Self-care for anxiety"
+            title="Practice Job Interview"
             delay={0.1}
-            alt="Job Interview"
+            alt="Person in professional attire preparing for job interview"
+            onClick={() => handleOptionClick("Let's practice for a job interview. You'll be the interviewer and I'll be the candidate.")}
           />
         </div>
 
@@ -44,9 +45,10 @@ const OptionsPanel = React.memo(({ onOptionSelect }: OptionsPanelProps) => {
              className="bg-[#F2EDE5] rounded-[20px] md:rounded-[24px] shadow-[inset_0_1px_1px_rgba(0,0,0,0.05)] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
           <ImageCard
             imageUrl={RIDDLES_IMAGE}
-            title="Expand your vocabulary"
+            title="Solve Riddles"
             delay={0.2}
-            alt="Riddles"
+            alt="Abstract puzzle pieces representing riddles and brain teasers"
+            onClick={() => handleOptionClick("Give me some interesting riddles to solve")}
           />
         </div>
       </div>
@@ -54,10 +56,11 @@ const OptionsPanel = React.memo(({ onOptionSelect }: OptionsPanelProps) => {
       <div onClick={() => handleOptionClick("Explain the concept of the multiverse in simple terms")}
            className="bg-[#F2EDE5] rounded-[20px] md:rounded-[24px] shadow-[inset_0_1px_1px_rgba(0,0,0,0.05)] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
         <HorizontalCard
-          title="Egoism vs. altruism"
+          title="Explore the Multiverse"
           imageUrl={GALAXY_IMAGE}
           delay={0.3}
-          alt="Galaxy"
+          alt="Spiral galaxy in deep space representing the multiverse concept"
+          onClick={() => handleOptionClick("Explain the concept of the multiverse in simple terms")}
         />
       </div>
     </div>
