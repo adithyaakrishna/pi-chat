@@ -30,37 +30,37 @@ const OptionsPanel = React.memo(({ onOptionSelect }: OptionsPanelProps) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-        <div onClick={() => handleOptionClick("Let's practice for a job interview. You'll be the interviewer and I'll be the candidate.")}
+        <div onClick={() => handleOptionClick("I'd like to practice for a job interview. Could you be the interviewer and ask me common interview questions? Please provide constructive feedback on my responses and help me improve my interview skills.")}
              className="bg-[#F2EDE5] rounded-[20px] md:rounded-[24px] shadow-[inset_0_1px_1px_rgba(0,0,0,0.05)] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
           <ImageCard
             imageUrl={JOB_INTERVIEW_IMAGE}
             title="Practice Job Interview"
             delay={0.1}
             alt="Person in professional attire preparing for job interview"
-            onClick={() => handleOptionClick("Let's practice for a job interview. You'll be the interviewer and I'll be the candidate.")}
+            onClick={() => handleOptionClick("I'd like to practice for a job interview. Could you be the interviewer and ask me common interview questions? Please provide constructive feedback on my responses and help me improve my interview skills.")}
           />
         </div>
 
-        <div onClick={() => handleOptionClick("Give me some interesting riddles to solve")}
+        <div onClick={() => handleOptionClick("Let's engage in some brain teasers! Could you present me with a mix of logical, mathematical and word riddles? I'd like to solve them and get hints if I'm stuck.")}
              className="bg-[#F2EDE5] rounded-[20px] md:rounded-[24px] shadow-[inset_0_1px_1px_rgba(0,0,0,0.05)] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
           <ImageCard
             imageUrl={RIDDLES_IMAGE}
             title="Solve Riddles"
             delay={0.2}
             alt="Abstract puzzle pieces representing riddles and brain teasers"
-            onClick={() => handleOptionClick("Give me some interesting riddles to solve")}
+            onClick={() => handleOptionClick("Let's engage in some brain teasers! Could you present me with a mix of logical, mathematical and word riddles? I'd like to solve them and get hints if I'm stuck.")}
           />
         </div>
       </div>
 
-      <div onClick={() => handleOptionClick("Explain the concept of the multiverse in simple terms")}
+      <div onClick={() => handleOptionClick("Could you explain the fascinating concept of the multiverse in simple terms? I'd like to understand the different theories, how they might work, and what evidence scientists have found that supports these ideas.")}
            className="bg-[#F2EDE5] rounded-[20px] md:rounded-[24px] shadow-[inset_0_1px_1px_rgba(0,0,0,0.05)] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
         <HorizontalCard
           title="Explore the Multiverse"
           imageUrl={GALAXY_IMAGE}
           delay={0.3}
           alt="Spiral galaxy in deep space representing the multiverse concept"
-          onClick={() => handleOptionClick("Explain the concept of the multiverse in simple terms")}
+          onClick={() => handleOptionClick("Could you explain the fascinating concept of the multiverse in simple terms? I'd like to understand the different theories, how they might work, and what evidence scientists have found that supports these ideas.")}
         />
       </div>
     </div>
