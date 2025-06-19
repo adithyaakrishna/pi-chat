@@ -18,8 +18,7 @@ const OptionsPanel = React.memo(({ onOptionSelect }: OptionsPanelProps) => {
 
   return (
     <div className="space-y-4 md:space-y-6 overflow-y-auto px-3 sm:px-4 md:px-6 py-4 md:py-6 h-full">
-      <div onClick={() => handleOptionClick("Show me my conversation history")} 
-           className="bg-[#F2EDE5] rounded-[20px] md:rounded-[24px] shadow-[inset_0_1px_1px_rgba(0,0,0,0.05)] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
+      <div className="bg-[#F2EDE5] rounded-[20px] md:rounded-[24px] shadow-[inset_0_1px_1px_rgba(0,0,0,0.05)] hover:shadow-[inset_0_2px_2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
         <FeatureCard
           emoji="💬"
           title="Download your Pi conversation history"
